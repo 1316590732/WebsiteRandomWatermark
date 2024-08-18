@@ -1,0 +1,40 @@
+body {
+    /* position: relative; /* 或者 static */ */
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: auto; /* 或者 scroll */
+}
+
+ .watermark-style {
+ 	position: fixed;
+ 	font-size: 24px;
+ 	color: rgba(0, 0, 0, 0.3);
+ 	white-space: nowrap;
+ 	pointer-events: none;
+ 	z-index: 1000;
+ 	transform: translate(-50%, -50%) rotate(var(--rotation));
+ }
+
+ /* 动画样式 */
+ @keyframes fill {
+
+ 	0%,
+ 	100% {
+ 		clip-path: inset(0 0 0 50%);
+ 	}
+
+ 	50% {
+ 		clip-path: inset(0 50% 0 0);
+ 	}
+ }
+
+ @keyframes fillDiagonal {
+ 	0% {
+ 		transform: translate(-50%, -50%) rotate(-45deg) translateX(-50%);
+ 	}
+
+ 	100% {
+ 		transform: translate(-50%, -50%) rotate(-45deg) translateX(50%);
+ 	}
+ }
